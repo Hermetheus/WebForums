@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WebForums.Services;
 using WebForums.Data;
 using WebForums.Data.Models;
+using WebForums.Service;
 
 namespace WebForums
 {
@@ -31,6 +32,8 @@ namespace WebForums
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+
+            services.AddScoped<IForum, ForumService>();
 
             services.AddMvc();
         }
