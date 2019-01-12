@@ -3,8 +3,6 @@ using System.Linq;
 using WebForums.Models.Forum;
 using WebForums.Data;
 using WebForums.Models.Post;
-using System;
-using System.Collections.Generic;
 using WebForums.Data.Models;
 
 namespace WebForums.Controllers
@@ -45,6 +43,7 @@ namespace WebForums.Controllers
             var postListings = posts.Select(post => new PostListingModel
             {
                 Id = post.Id,
+                AuthorName = post.User.UserName,
                 AuthorId = post.User.Id,
                 AuthorRating = post.User.Rating,
                 Title = post.Title,

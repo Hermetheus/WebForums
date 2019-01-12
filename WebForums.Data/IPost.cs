@@ -6,7 +6,7 @@ namespace WebForums.Data
 {
     public interface IPost
     {
-        IPost GetById(int id);
+        Post GetById(int id);
         IEnumerable<Post> GetAll();
         IEnumerable<Post> GetFilteredPosts(string searchQuery);
         IEnumerable<Post> GetPostsByForum(int id);
