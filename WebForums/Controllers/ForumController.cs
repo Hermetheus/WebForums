@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using Microsoft.AspNetCore.Identity;
 using WebForums.Models.Forum;
 using WebForums.Data;
 using WebForums.Models.Post;
@@ -12,9 +13,10 @@ namespace WebForums.Controllers
         private readonly IForum _forumService;
         private readonly IPost _postService;
 
-        public ForumController(IForum forumService)
+        public ForumController(IPost postService, IForum forumService, UserManager<ApplicationUser> userManager)
         {
             _forumService = forumService;
+            _postService = postService;
         }
 
         public IActionResult Index()
